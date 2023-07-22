@@ -7,4 +7,4 @@ The main difficulty found while programming this project was making the grid siz
 
 In the future, I hope to add the feature to get rid of all outlines, as well as make the pen to be adjustable in size so that it is not as hard to paint larger areas when the grid is large.
 
-![Etch-A-Sketch Image](https://github.com/don04lee/odin-etchasketch/image.png)
+![Etch-A-Sketch Image](https://github.com/don04lee/odin-etchasketch/blob/main/image.png)
