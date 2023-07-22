@@ -1,5 +1,4 @@
-# odin-etchasketch
-Etch-A-Sketch
+# Etch-A-Sketch
 
 This is my solution following The Odin Project's curriculum. This program has the ability similar to that of an Etch-A-Sketch, hence the name. By incorporating JS, CSS, and HTML, a drawing project has been developed where the user can input a grid size ranging from 1 to 100, as well as the ability to erase from the drawing, add random rainbow colors, and choose your own color within the program. 
 
