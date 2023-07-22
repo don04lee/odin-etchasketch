@@ -40,14 +40,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   width: 300px;
-  height: 500px;  
+  height: 400px;  
   border-radius: 25px;
   background-color: lightgray;
 }
 
-.eraseButton {
+.eraseButton,
+.rainbowButton {
   display: flex;
   box-sizing: border-box;
   justify-content: center;
@@ -60,7 +61,7 @@ body {
   color: black;
 }
 
-.eraseButton.active {
+.active {
   border: solid 5px lightblue;
 }
 

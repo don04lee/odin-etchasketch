@@ -33,6 +33,15 @@ eraseButton.textContent = 'Erase';
 eraseButton.classList.add('eraseButton');
 sidebar.appendChild(eraseButton);
 
+// rainbow toggle
+let rainbowToggle = false;
+let rainbowButton = document.createElement('div');
+rainbowButton.textContent = 'Rainbow';
+rainbowButton.classList.add('rainbowButton');
+sidebar.appendChild(rainbowButton);
+
+// erase button overrides rainbow and disables it
+// if rainbow was still active
 eraseButton.addEventListener('click', function() {
   eraseButton.classList.toggle('active');
   if(eraseToggle) {
@@ -40,11 +49,34 @@ eraseButton.addEventListener('click', function() {
   }
   else{
     eraseToggle = true;
+    if(rainbowToggle) {
+      rainbowToggle = false;
+      rainbowButton.classList.toggle('active');
+    }
+  }
+});
+
+// rainbow button overrides erase and disables it 
+// if erase was still active
+rainbowButton.addEventListener('click', function() {
+  rainbowButton.classList.toggle('active');
+  if(rainbowToggle) {
+    rainbowToggle = false;
+  }
+  else {
+    rainbowToggle = true;
+    if(eraseToggle) {
+      eraseToggle = false;
+      eraseButton.classList.toggle('active');
+    }
   }
 });
 
 // resizing occurs when size button is clicked
 confirmSizeButton.addEventListener('click', function() {
+  if(sizeButton.value < 1 || sizeButton.value > 100) {
+    return;
+  }
   while(grid.firstChild) {
     grid.removeChild(grid.firstChild);
   }
@@ -88,6 +120,9 @@ function color() {
       if(eraseToggle && mouseDown){
         cell.style['background-color'] = 'white';
       }
+      else if(rainbowToggle && mouseDown){
+        cell.style['background-color'] = "#" + Math.floor(Math.random()*16777215).toString(16);
+      }
       else if(mouseDown){
         cell.style['background-color'] = currColor;
       }
@@ -97,6 +132,9 @@ function color() {
       currColor = document.getElementById('colorButton').value;
       if(eraseToggle){
         cell.style['background-color'] = 'white';
+      }
+      else if(rainbowToggle){
+        cell.style['background-color'] = "#" + Math.floor(Math.random()*16777215).toString(16);
       }
       else {
         cell.style['background-color'] = currColor;
